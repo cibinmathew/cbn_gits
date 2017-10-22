@@ -38,13 +38,4 @@ sudo umake ide eclipse
 sudo apt-get install oracle-java8-installer
 
 
-# prompt for a reboot
-clear
-echo ""
-echo "===================="
-echo " TIME FOR A REBOOT! "
-echo "===================="
-echo ""
-
-
 }
