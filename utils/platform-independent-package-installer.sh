@@ -1,3 +1,9 @@
+# $Universal_home/Downloads/Projects/"
+
+
+
+
+
 # paci         - install one or more packages
 # pacu         - upgrade all packages to their newest version
 # pacr         - uninstall one or more packages
@@ -39,8 +45,10 @@ elif [ -e "/usr/bin/pacman" ] ; then # Arch Linux
   alias pacfiles="$pacman -Ql"
   alias pacexpl="$pacman -D --asexp"
   alias pacimpl="$pacman -D --asdep"
-elif [ -e "/usr/bin/yum" ] ; then # RPM-based distros
-  yum="/usr/bin/yum"
+elif [ -e "/usr/bin/dnf" ] ; then # RPM-based distros
+# elif [ -e "/usr/bin/yum" ] ; then # RPM-based distros
+  yum="/usr/bin/dnf"
+  # yum="/usr/bin/yum"
   sudoyum="sudo $yum"
   repoquery="/usr/bin/repoquery"
   alias paci="$sudoyum install"

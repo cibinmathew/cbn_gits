@@ -441,6 +441,7 @@ AddMenuTrayAutostart()
 	Menu, Tray, Add,
 	Menu, Tray, Add, Autostart, menuTrayAutostartToggle
 	file=%A_Startup%\%A_ScriptNAME%.lnk
+	
 	If FileExist(file)
 		Menu Tray, Check, AutoStart
 	;msgbox,%A_Startup%\%A_ScriptNAME%.lnk
@@ -452,6 +453,8 @@ return
 menuTrayAutostartToggle()
 {
    file=%A_Startup%\%A_ScriptNAME%.lnk
+   tooltip,%file%
+   sleep,1500
     If FileExist(file)
    {
       Menu Tray, Uncheck, AutoStart
@@ -459,9 +462,12 @@ menuTrayAutostartToggle()
    }
    Else
    {
+   tooltip,added
+   sleep,500
       Menu Tray, Check, AutoStart ;%A_ScriptNAME%
       FileCreateShortcut %A_ScriptFullPath%, %A_StartUp%\%A_ScriptNAME%.lnk,WD,Arg,Manages multiple AutoHotkey scripts
    }
+   tooltip
 return
 }
  

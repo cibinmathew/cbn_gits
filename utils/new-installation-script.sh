@@ -28,13 +28,20 @@ source platform-independent-package-installer.sh
 # alias cibin-sudo=sudo if linux else ''
 # add this to updatedb
 
-paci # sudo apt-get update/ yum update
+pacu # sudo apt-get update/ yum update
 
 
 #######################
 # BASH config
 ######################
 
+
+# TODO 
+# git clone to ~ not working
+
+
+git clone https://github.com/cibinmathew/my-dotfiles.git ~/my-tmp-git
+find ~/my-tmp-git/ -mindepth 1 -maxdepth 1 -exec mv -f -t ~/ -- {} +
 
 echo "downloading ..."
 wget --no-check-certificate https://github.com/cibinmathew/cbn_gits/raw/master/ported_files/cibin/.bashrc -O ~/.bashrc
@@ -63,13 +70,15 @@ paci vim
 #vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# TODO verdana font error in linux in org-settings.el
 # emacs
+#http://wikemacs.org/wiki/Installing_Emacs_on_GNU/Linux
+paci emacs                  # centos/redhat/fedora
 paci emacs25
+
+# mac oS available in spacemacs page
+
 # spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
-
-#spacemacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
@@ -214,7 +223,8 @@ paci libx11-dev libxtst-dev
 git clone https://github.com/r0adrunner/Space2Ctrl.git  ~/my-scripts/Space2Ctrl
 cd ~/my-scripts/Space2Ctrl
 make
-sudo make install
+# sudo make install
+
 # run this ~/my-scripts/Space2Ctrl/s2cctl start
 
 # xcape has more options
