@@ -29,7 +29,9 @@ source platform-independent-package-installer.sh
 # add this to updatedb
 
 pacu # sudo apt-get update/ yum update
-
+paci curl
+paci wget
+paci make
 
 #######################
 # BASH config
@@ -220,6 +222,8 @@ echo ""
 #Space2Ctrl
 #Prerequisites:   Install X11 and XTEST development packages. On Debian GNU/Linux derivatives:
 paci libx11-dev libxtst-dev
+paci gcc
+paci g++
 git clone https://github.com/r0adrunner/Space2Ctrl.git  ~/my-scripts/Space2Ctrl
 cd ~/my-scripts/Space2Ctrl
 make

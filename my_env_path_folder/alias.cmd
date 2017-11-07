@@ -16,8 +16,13 @@ doskey ex=exit
 doskey r=C:\cygwin64\bin\python3.6m.exe C:\cygwin64\bin\ranger
 doskey ranger=C:\cygwin64\bin\python3.6m.exe C:\cygwin64\bin\ranger
 
+doskey s=bash --login -i -c "s"
+doskey sf=bash --login -i -c "sf"
+doskey snf=bash --login -i -c "snf"
+
 doskey gdf=git diff --name-only
-doskey gcm=git commit -a -m
+doskey gcm=git commit -a -m "$1"
 doskey cd = cd /d $* ^&^& "C:\cbn_gits\my_env_path_folder\cmd-set-title.bat"
 doskey cd=@echo off$Tcd /d $*$T@title ^%cd^%$Techo on
+
 title %cd%
