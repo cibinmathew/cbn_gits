@@ -1215,3 +1215,361 @@ curl -XPUT 'http://localhost:9200/blog/post/2' -d '
 }'
 #1507042001
 curl -XGET 'http://localhost:9200/blog/post/2?pretty=true'
+#1508053622
+ex
+#1508316712
+alias clip
+#1508316729
+spf
+#1508317005
+alias a='cd $Universal_home'
+#1508317006
+a
+#1508317174
+snf
+#1508317184
+echo $Universal_home
+#1508317195
+cygpath -H
+#1508317218
+if [ "$OS" == "Windows_NT" ]; then Universal_home=$(cygpath -H)  # /cygdrive/c/cygwin64/home/username; else Universal_home=$HOME; echo "linux machine"; fi
+#1508317218
+Universal_home="$Universal_home/$USERNAME"
+#1508317218
+export Universal_home
+#1508317222
+echo "$Universal_home"
+#1508316840
+bash
+#1508316758
+bash
+#1508316695
+bash
+#1508316640
+bash
+#1508316616
+bash
+#1508316603
+bash
+#1508317557
+echo
+#1508317558
+echo a
+#1508317565
+echo $cbn_git_path
+#1508317747
+cat "$cbn_git_path/cbn_gits/AHK/popular_commands.db"|fzy -l 20
+#1508318188
+spf
+#1508502180
+sf
+#1508572108
+ex
+#1508572222
+s
+#1508548896
+wget -c https://download.fedoraproject.org/pub/fedora/linux/releases/26/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-26-1.5.iso
+#1508669587
+sf
+#1508669587
+sf
+#1508669609
+q
+#1508669612
+s
+#1508669616
+scf
+#1508669646
+searchcommands|clip
+#1508669648
+s
+#1508669930
+alias aaa='ls'
+#1508669931
+aaa
+#1508669945
+function k(){aaa}
+#1508669951
+function k(){aaa;}
+#1508669960
+function k() { aaa; }
+#1508669967
+aaa
+#1508669969
+k
+#1508670065
+s
+#1508670071
+l
+#1508670074
+sc
+#1508670076
+scf
+#1508670078
+s
+#1508670078
+s
+#1508805561
+searchnotes 5
+#1508805614
+searchnotes 7
+#1508805647
+searchnotes -m 7 axdepth
+#1508805698
+searchnotes -ma 7 axdepth
+#1508805900
+searchnotes maxdepth
+#1508805945
+searchnotes narcos
+#1508805961
+searchnotes -m 6 narcos
+#1508806008
+searchnotes narcos
+#1508806240
+searchnotes na
+#1508806251
+searchnotes narcos
+#1508806280
+lfind "$Universal_home/Downloads/" -maxdepth "$maxdepth" -iname "*notes*.org" -exec  echo {} +
+#1508806288
+lfind "$Universal_home/Downloads/" -maxdepth 5 -iname "*notes*.org" -exec  echo {} +
+#1508806296
+lfind "$Universal_home/Downloads/"  -iname "*notes*.org" -exec  echo {} +
+#1508806339
+searchnotes narcos
+#1508806344
+searchnotes -m 6 narcos
+#1508806349
+searchnotes -m 1 narcos
+#1508806356
+searchnotes -m 0 narcos
+#1508806378
+searchnotes -m 40 narcos
+#1508806246
+bash
+#1508805890
+bash
+#1508805691
+bash
+#1508805609
+bash
+#1508805580
+bash
+#1508806558
+searchnotes narco
+#1508806566
+searchnotes m 8 narco
+#1508806573
+searchnotes -m 8 narco
+#1508806578
+searchnotes -m 1 narco
+#1508806597
+searchnotes -m 3 narco
+#1508806602
+searchnotes -m 5 narco
+#1508806607
+searchnotes -m 8 narco
+#1508826880
+searchnotes  -m 8 narco
+#1508826886
+searchnotes -m 8 narco
+#1508827362
+searchnotes  -m 8 narco
+#1508827372
+searchnotes -m 8 narco
+#1508828681
+echo $key
+#1508829409
+searchnotes -m 8 narco
+#1508907004
+foo
+#1508907007
+foo -a c
+#1508907011
+foo -a casdf
+#1508907017
+foo -d casdf
+#1508907002
+bash
+#1508907088
+searchnotes -m 8 narco
+#1508907127
+searchnotes -m 1 narco
+#1508907210
+searchnotes -m 2 narco
+#1508907215
+searchnotes -m 4 narco
+#1508907330
+alias sNf='searchnotes -m 5 .|fzy -l 25' # sn fuzzy
+#1508907335
+alias snf
+#1508907338
+alias sNf
+#1508907344
+sNf
+#1508907412
+searchnotes -m 4 narcos
+#1508907427
+searchnotes -m 4 .|fzy
+#1508907450
+searchnotes -m 4 .|fzf
+#1508907461
+searchnotes -m 4 .|fzy
+#1508907488
+searchnotes -m 4 narcos
+#1508907507
+snf
+#1508907566
+alias snf
+#1508907579
+sNf
+#1508907595
+narcoss
+#1508907600
+snf
+#1508907631
+searchnotes narcos
+#1508907662
+snf
+#1508907779
+st
+#1508907948
+sf
+#1508907948
+sf
+#1508907982
+searchnotes narcos
+#1508907988
+snf
+#1508907503
+bash
+#1509456090
+sf
+#1509456090
+sf
+#1509456098
+s
+#1509456098
+s
+#1509456116
+snf
+#1509456215
+find ~/my-scripts/ ~/.config/ranger/ -iname rc
+#1509456229
+find ~/my-scripts/ ~/.config/ranger/ -iname "rc*"
+#1509456236
+find ~/my-scripts/ ~/.config/ranger/ -iname "fz"
+#1509456243
+ls ~/my-scripts/
+#1509456248
+find ~/my-scripts/ ~/.config/ranger/ -iname "f"
+#1509456250
+find ~/my-scripts/ ~/.config/ranger/ -iname "f*"
+#1509456255
+find ~/my-scripts/ ~/.config/ranger/ -iname "r*"
+#1509456360
+lfind "/media/sf_Downloads/" -maxdepth "$maxdepth" -iname "*notes*.txt" -exec  ag -i --noheading --numbers --filename --no-color --color-match "2;46" $* {} +
+#1509456399
+lfind "/media/sf_Downloads/" -maxdepth 1 -iname "*notes*.txt" -exec  ag -i --noheading --numbers --filename --no-color --color-match "2;46" $* {} +
+#1509456535
+lfind "/media/sf_Downloads/" -maxdepth 1 -iname "*notes*.txt" -exec  ag -i --noheading --numbers --filename --no-color --color-match "2;46" $* {} +   2>&1
+#1509456563
+lfind "/media/sf_Downloads/" -maxdepth 1 -iname "*notes*.txt" -exec  ag -i --noheading --numbers --filename --no-color --color-match "2;46" $* {} +  2>&1
+#1509456592
+snf
+#1509457337
+vim
+#1509457348
+s
+#1509842740
+cdh
+#1509842749
+vi myalias.sh 
+#1509842995
+cdh
+#1509842999
+vi myalias.sh 
+#1509842778
+vi my.vimrc 
+#1509853371
+s
+#1509853375
+alias 
+#1509853379
+alias s
+#1509853382
+ex
+#1509853919
+echo "\[\e[01;32m\]\u\[\e[38;5;24m\] \[\e[38;5;30m\]\w\[\e[38;5;35m\] > \[$(tput sgr0)\] "
+#1510078366
+cdh
+#1510078370
+vim myalias.sh 
+#1510078640
+ag
+#1510078643
+ag fuzzy search files in parent directory of current file
+#1510078643
+This command is very handy if you want to explore or edit the surrounding/neigbouring files of the file your currently editing. (e.g. files in the same directory)
+#1510078643
+function! s:fzf_neighbouring_files()
+#1510078644
+endfunction
+#1510078654
+ag
+#1510078662
+ag -G *.sh
+#1510078669
+ag -G *.sh function
+#1510078715
+ag function -G *.sh 
+#1510078758
+vim myalias.sh 
+#1510078916
+rg
+#1510078953
+vim myalias.sh 
+#1510078989
+ag
+#1510079034
+vim myalias.sh 
+#1510158994
+vim -u NONE
+#1510159104
+vimu
+#1510159209
+vim -u ~/basic.vimrc 
+#1510159222
+cdh
+#1510159227
+vim -u ~/basic.vimrc 
+#1510159657
+vimu
+#1510159828
+vimu lib.sh
+#1510159823
+bash
+#1510159676
+bash
+#1510159653
+bash
+#1510161693
+cdp
+#1510161829
+gdf
+#1510162048
+g
+#1510162052
+ex
+#1510162197
+gdf
+#1510162301
+l myalias.sh
+#1510162313
+less -isNm sh
+#1510162316
+l sh
+#1510162328
+alias l
+#1510162336
+less -isNm *.sh

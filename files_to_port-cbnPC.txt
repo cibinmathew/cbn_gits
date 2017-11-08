@@ -4,4 +4,3 @@ C:/Users/cibin/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).su
 C:/Users/cibin/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings
 C:/Users/cibin/AppData/Roaming/Sublime Text 3/Packages/User/fuzzy_file_nav.sublime-settings
 C:/Users/cibin/AppData/Roaming/Microsoft/Excel/XLSTART/PERSONAL.XLSB
-C:/cygwin64/home/cibin
