@@ -109,5 +109,6 @@
 //default one have different other checks based on context
 { "keys": ["shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
 { "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
-]
 
+  { "keys": ["alt+s", "h"], "command": "show_panel", "args": {"panel": "find_in_files"} }
+]

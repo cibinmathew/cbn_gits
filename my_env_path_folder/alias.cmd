@@ -20,6 +20,7 @@ doskey ranger=C:\cygwin64\bin\python3.6m.exe C:\cygwin64\bin\ranger
 
 
 doskey s=bash --login -i -c "s"
+doskey scf=bash --login -i -c "scf"
 doskey sf=bash --login -i -c "sf"
 doskey snf=bash --login -i -c "snf"
 
@@ -32,7 +33,9 @@ doskey cd = cd /d $* ^&^& "C:\cbn_gits\my_env_path_folder\cmd-set-title.bat"
 doskey cd=@echo off$Tcd /d $*$T@title ^%cd^%$Techo on
 doskey cd=cd $* $T dir
 
+doskey vi=vim
 
+rem todo  add ~/basic-settings-no-plugins.vimrc
 doskey vimu=vim -u NONE
 
 title %cd%
