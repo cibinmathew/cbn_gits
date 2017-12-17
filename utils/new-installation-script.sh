@@ -2,19 +2,33 @@
 source platform-independent-package-installer.sh
 
 
+#﻿ranger:
+#	remove from scope.sh , exe,iso file preview handling to improve performance
+
+
+#fzf completion
+#vim PlugInstall
+
+
+#https://ascending.wordpress.com/2011/02/11/unix-tip-make-less-more-friendly/
+
+#add C:\cygwin64\usr\local\bin to path
+
+
+
 # RPi https://gist.github.com/johnantoni/8199088 send ip to mail.
 
 # try  https://github.com/lra/mackup
 # make a section for installing only imp functions and tools for debugging/.... in a remote or raspberry pi like network debugging
 # a bash command which wgets a github file and sets aliases and functions for easy debugging.. no installs.. asks if to install; again ask if to install more advanced tools
-# 
+#
 # make it work for ubuntu,centos, windows
 # imp tools/cygwin equivalents, less imp tools/cygwin equivalents
 # bash config,imp tools config, less imp tools configs
 #
 # todo next
 # emacs config
-# convert all /cygdrive/c... to $Universal_home 
+# convert all /cygdrive/c... to $Universal_home
 # variable platform(windows,linux,mac); os(ubuntu,fedora,osx)
 #
 # auto startup script/ cron based on os
@@ -38,7 +52,7 @@ paci make
 ######################
 
 
-# TODO 
+# TODO
 # git clone to ~ not working
 
 
@@ -113,6 +127,12 @@ paci caca-utils highlight atool w3m poppler-utils mediainfo
 ## works only with cygwing python
 ## make install This translates roughly to:
 ## python setup.py install --optimize=1 --record=install_log.txt # specify python path here
+
+
+# python anaconda
+# https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
+
+
 
 # git clone git://git.savannah.nongnu.org/ranger.git
 # or
@@ -243,3 +263,13 @@ make
 
 # Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+# ncurses library
+sudo apt-get install libncurses5-dev libncursesw5-dev
+
+# TODO install tig git interface
+paci tig
+
+# diff tools
+paci meld
