@@ -42,7 +42,7 @@ else
 */
 flag=1
 backspace_A=backspace_F
-capslock_A=backspace_f  
+capslock_A=backspace_f
 C_wheelup_A=PgUP_f
 A_Wheeldown_A=winmenu_F
 C_Wheeldown_A=Pgdn_f
@@ -63,7 +63,7 @@ alt_lbutton_A=nil
 flag=0
 
 
-;priority 
+;priority
 Hotkey, <^Wheeldown, , p1
 Hotkey, <^Wheelup, , p1
 
@@ -79,6 +79,7 @@ Send, %var1%
 return
 
 
+:c*:pr`;`;::C:\Users\212576716\Downloads\Projects
 :c*:19`;`;::192.168.0.
 :c*:98`;`;::9809448557
 :c*:cm`;`;::Cibin Mathew
@@ -93,11 +94,11 @@ return
 if (A_PriorHotKey = "~lctrl" AND A_TimeSincePriorHotkey < 400)
 {
 	run,C:\Users\welcome\Downloads\COMPRESSED\Everything-1.3.0.631b\Everything-1.3.0.631b.exe
-  
+
  }
 else
 {
-  
+
 }
 Sleep 0
 KeyWait lctrl
@@ -107,7 +108,7 @@ return
 ;400 is the maximum allowed delay (in milliseconds) between presses.
 if (A_PriorHotKey = "~lshift" AND A_TimeSincePriorHotkey < 300)
 {
-	DetectHiddenWindows, On 
+	DetectHiddenWindows, On
 
 	ifwinexist, %path2% ahk_class AutoHotkey
 	{
@@ -118,7 +119,7 @@ if (A_PriorHotKey = "~lshift" AND A_TimeSincePriorHotkey < 300)
 		Progress, b    w80  fs16 zh0  CTFFFFFF CWFF0000, H keyB OFF, , , Calibri
 		Sleep, 500
 		Progress, off
-	  
+
 	 }
 else
   {
@@ -150,7 +151,7 @@ return
 	}
 	; sleep, 400
 	; Tooltip
-	Return  
+	Return
 */
 
 +F1::	;	monitor off
@@ -180,18 +181,18 @@ return
 ;ctrl home
 <+wheelup::	; na
 gosub, %S_wheelup_A%
-return  
+return
 
 ;ctrl end
 <+wheeldown::	; na
 	gosub, %S_wheeldown_A%
-return 
+return
 
 <#lbutton::	; na
 	gosub, %win_Lbutton_A%
 return
 
- 
+
 #rbutton::	; na
 	gosub, %win_rbutton_A%
 return
@@ -203,11 +204,11 @@ return
 
 pause::	;	ToolTip,Clipboard
 	StringLeft, MyText, Clipboard, 200
-	ToolTip, %MyText% 
+	ToolTip, %MyText%
 	keywait, Lbutton, D ,t2
 	ToolTip,
 return
- 
+
 
 <^Wheeldown::	; na
 	gosub, %C_Wheeldown_A%
@@ -230,16 +231,16 @@ PgUP_F:
 return
 
 Pgdn_f:
-	send {PGdn} 
+	send {PGdn}
 return
- 
+
 PgUP2_F:
-	send {PGUP} 
+	send {PGUP}
 	send {wheelDOWN}
 return
 
 PgDN2_F:
-	send {PGdn} 
+	send {PGdn}
 	send {wheelup}
 return
 
@@ -289,13 +290,13 @@ paste_all_F:
 	send ^v
 return
 
-ctrl_home_F: 
+ctrl_home_F:
 send ^{home}
-return  
+return
 
 ctrl_end:
-send ^{end}  
-return 
+send ^{end}
+return
 
 select_all_F:
 send, ^a
@@ -316,7 +317,7 @@ return
 enter_F:
 	send, {enter}
 return
-	
+
 paste_F:
 send_key_emacs_or_after_translatingTo_normal_ifNot_emacseditor("C-y")
 	SetTimer, RemoveToolTip, 750
@@ -324,7 +325,7 @@ return
 
 cut_F:
 	; send, ^x
-	
+
 send_key_emacs_or_after_translatingTo_normal_ifNot_emacseditor("C-w")
 	; ToolTip, %clipboard%
 	; SetTimer, RemoveToolTip, 750
@@ -365,11 +366,11 @@ else
 WinSetTitle, A, , %TempText%
 Return
 
-IsWindow(hwnd) 
+IsWindow(hwnd)
 {
-    WinGet, s, Style, ahk_id %hwnd% 
+    WinGet, s, Style, ahk_id %hwnd%
     return s & 0xC00000 ? (s & 0x80000000 ? 0 : 1) : 0
-    ;WS_CAPTION AND !WS_POPUP(for tooltips etc) 
+    ;WS_CAPTION AND !WS_POPUP(for tooltips etc)
 }
 
 ; <^printscreen::	; screenshot, save & open
@@ -384,7 +385,7 @@ Input, SingleKey, L1 T4,  {esc}{LControl}{RControl}{LShift}{RShift}
 
 if ErrorLevel = Timeout
 {
-    ;MsgBox,   the input timed out. 
+    ;MsgBox,   the input timed out.
 	tooltip,saved to default,,,2
 	settimer,RemoveToolTip2,-3000
 	return
@@ -405,12 +406,12 @@ else IfInString, ErrorLevel, EndKey:
 			{
 			run,"%A_ScriptDir%\screenshots"
 			sleep,200
-			
+
 			run,"%A_ScriptDir%\screenshots\screenshot %TimeString2%.png"
 			}
 		settimer,removetooltip2,-4000
-		return		
-		
+		return
+
 	}
 	else if (ErrorLevel ="EndKey:LShift")	;	space to return to main menu
 	{
@@ -424,8 +425,8 @@ else IfInString, ErrorLevel, EndKey:
 	}
 
 }
-else  
-{	
+else
+{
 ; goto,again2
 }
 
@@ -471,7 +472,7 @@ save_AOT_Screenshot:
 	tooltip,click
 	sleep,50
 	tooltip
-	
+
 	Runwait, %comspec% /c ""%nircmd_Folder%\nircmd.exe" cmdwait 100 savescreenshot "C:\users\%a_username%\Downloads\AOT Clipboard Image.png" ,,Hide
 	tooltip,saved`n^+5:: open
 	sleep,2000
@@ -499,73 +500,73 @@ save_AOT_image:
 		settimer,removetooltip,-1000
 	}
 return
-	
+
 <^printscreen:: ; Print Screen CycleHK
-settimer,cancelPrintScreenCycleHK,off	
-if !(PrintScreenCycleHK_active)	;	if hotkey is currently not in cycle mode 
+settimer,cancelPrintScreenCycleHK,off
+if !(PrintScreenCycleHK_active)	;	if hotkey is currently not in cycle mode
 {
 	PrintScreenCycleHK_count:=0
 }
 
 if (PrintScreenCycleHK_count=0)
-{	
+{
 	PrintScreenCycleHK_count++
 	msg=screenshot_save_open
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500	
+	settimer,cancelPrintScreenCycleHK,-2500
 	PrintScreenCycleHK_action = screenshot_save_open
 }
 else if (PrintScreenCycleHK_count=1)
-{	
+{
 
 	PrintScreenCycleHK_count++
 	msg=screenshot_loop 5s
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500	
-	PrintScreenCycleHK_action = screenshot_loop_5	
+	settimer,cancelPrintScreenCycleHK,-2500
+	PrintScreenCycleHK_action = screenshot_loop_5
 }
 else if (PrintScreenCycleHK_count=2)
-{	
+{
 
 	PrintScreenCycleHK_count++
 	msg=save_AOT_Screenshot
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500	
-	PrintScreenCycleHK_action = save_AOT_Screenshot	
+	settimer,cancelPrintScreenCycleHK,-2500
+	PrintScreenCycleHK_action = save_AOT_Screenshot
 }
 else if (PrintScreenCycleHK_count=3)
-{	
+{
 
 	PrintScreenCycleHK_count++
 	msg=save_AOT_image
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500	
-	PrintScreenCycleHK_action = save_AOT_image	
+	settimer,cancelPrintScreenCycleHK,-2500
+	PrintScreenCycleHK_action = save_AOT_image
 }
 else if (PrintScreenCycleHK_count=4)
-{	
+{
 
 	PrintScreenCycleHK_count++
 	msg=open saved folder
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500	
-	PrintScreenCycleHK_action = open_screenshot_folder	
+	settimer,cancelPrintScreenCycleHK,-2500
+	PrintScreenCycleHK_action = open_screenshot_folder
 }
 else
-{	
+{
 
 	PrintScreenCycleHK_count:=0
 	msg=cancel
 	settimer,removetooltip,-1600
 	tooltip,%PrintScreenCycleHK_count% %msg%
-	settimer,cancelPrintScreenCycleHK,-2500		
+	settimer,cancelPrintScreenCycleHK,-2500
 }
-	
+
 	PrintScreenCycleHK_active:=1
 	hotkey,^q,on
 	setTimer,PrintScreenCycleHK,70
@@ -577,23 +578,23 @@ PrintScreenCycleHK:	;	cancel checking status of ctrl key
 	GetKeyState,state,CTRL
 	If state=u
 	{
-	
+
 		gosub,cancelPrintScreenCycleHK
 		if (PrintScreenCycleHK_count=0)
-		{	
+		{
 			settimer,removetooltip,-1500
 			tooltip,%PrintScreenCycleHK_count% cancelled
-			
+
 		}
 		else if (PrintScreenCycleHK_count=1)
 		{
-		
+
 		gosub,%PrintScreenCycleHK_action%
-			
-			
+
+
 		}
 		else if (PrintScreenCycleHK_count=2)
-		{	
+		{
 
 		gosub,%PrintScreenCycleHK_action%
 
@@ -618,11 +619,11 @@ cancelPrintScreenCycleHK:	;	cancel without action
 	tooltip,cancelling
 	settimer,removetooltip,-300
 	hotkey,^q,off
-	
+
 return
 ; ===================dopus============
 
-#IfWinActive, ahk_class dopus.viewpicframe 
+#IfWinActive, ahk_class dopus.viewpicframe
 right::send {wheeldown} ; na
 return
 
@@ -634,7 +635,7 @@ return
 
 #IfWinActive
 
-~LButton & XButton1::Send, {Ctrldown}c{CtrlUp} ;copies stuff 
+~LButton & XButton1::Send, {Ctrldown}c{CtrlUp} ;copies stuff
 ~LButton & XButton2::Send, {Ctrldown}v{CtrlUp} ;pastes stuff
 ; ~XButton1 & RButton::WinMinimize A              ;minimizes windows
 
@@ -678,7 +679,7 @@ return
 
 <!wheeldown::	; na
 send, ^g
-return 
+return
 
 <!wheelup::	; na
 send, ^h
@@ -686,7 +687,7 @@ return
 
 <#lbutton::	; na
 send,{enter}
-return 
+return
 
 <#wheeldown::	; na
 send,{down}
@@ -696,7 +697,7 @@ send, ^g
 sleep,200
 send,{enter}
 */
-return 
+return
 
 <#wheelup::	; na
 send,{up}
@@ -709,8 +710,8 @@ send,{enter}
 return
 
 <^wheeldown::	; na
-send, +d 
-return 
+send, +d
+return
 
 <^wheelup::	; na
 send, {backspace}
@@ -748,7 +749,7 @@ rbutton & wheeldown::	; na
 	sleep,800
 	tooltip,
 return
- 
+
 ; #Esc::	; na
 Suspend, Permit
 	If ( !A_IsSuspended )
@@ -813,12 +814,12 @@ open_in_explorer:
 	{
 		;if folder ,open in opus
 		filex="%FileFullpath%"
-		 run  %Filex% 		
+		 run  %Filex%
 	}
 	else
 	{
-		 splitpath,FileFullpath,,Folder		
-		Run %Folder%	 
+		 splitpath,FileFullpath,,Folder
+		Run %Folder%
 	}
 	Return
 <^numpadenter::	; send, {lbutton}
@@ -830,18 +831,18 @@ return
 return
 
 
->^+F6::	      ;google map      
+>^+F6::	      ;google map
 	direction:=0
 	inputbox,tmp,google map,enter source to destination,,,,,,,,muvattupuzha
 	; if !ErrorLevel
 	if (RegExMatch(tmp, " to "))
 		{
-		direction:=1	
+		direction:=1
 		SubPata1:=RegExreplace(tmp, " to .*","")
 		SubPata2:=RegExreplace(tmp, ".* to ","")
 		; msgbox,%SubPata1%= %SubPata2%
 		}
-	if (direction)	
+	if (direction)
 		; run, http://maps.google.co.in/maps?q=%tmp%&qscrl=1&um=1&ie=UTF-8&sa=X&ei=ZDvDUZWWBMSUrAfc04DgDA&ved=0CAoQ_AUoAg
 		run, http://maps.google.co.in/maps?saddr=%SubPata1%&daddr=%SubPata2%	;&hl=en&ll=10.021934,76.604404&spn=0.097537,0.169086&sll=9.979848,76.573807&sspn=0.048775,0.084543&geocode=FZ6BmQAdy1uRBCmpjmFgEuYHOzEHXNSJ30Yiow%3BFchHmAAdb2yQBCnz8PadjN0HOzHlYnDM_2xQtA&mra=ls&t=m&z=13
 	else
@@ -858,7 +859,7 @@ contents_of_clip_path:
 			text:=truncated_text(contents,300)
 		}
 	else
-		text=EMPTY	
+		text=EMPTY
 
 	settimer,removetooltip,-4500
 	tooltip,contents of %file%`n`n%text%
@@ -894,7 +895,7 @@ filenames_from_clipb_path:
 			text:=truncated_text(matchlist2,300)
 		}
 	else
-		text=EMPTY	
+		text=EMPTY
 
 	settimer,removetooltip,-4500
 	tooltip,extract filenames from clipboard FILES`ncopied`n%text%`n(filenames without spaces only)
@@ -931,7 +932,7 @@ return
 >^+f8::	; extract filenames from clipboard...
 
 	text:=truncated_text(clipboard,120)
-	if !(HK_extract_filenames_cycle)	;	if hotkey is currently in cycle mode 
+	if !(HK_extract_filenames_cycle)	;	if hotkey is currently in cycle mode
 	{
 		HK_extract_filenames_cycle_count:=0
 	}
@@ -950,14 +951,14 @@ return
 		msg=copy contents of clip path`n%text%
 		HK_extract_filenames_cycle_action=contents_of_clip_path
 
-	}		
+	}
 	else if (HK_extract_filenames_cycle_count=2)
 	{
 		HK_extract_filenames_cycle_count++
 		msg=filenames from clipboard FILES`n%text%
 		HK_extract_filenames_cycle_action=filenames_from_clipb_path
 
-	}		
+	}
 	else
 	{
 		HK_extract_filenames_cycle_count:=0
@@ -969,10 +970,10 @@ return
 	tooltip,%msg%
 	settimer,removetooltip,-4500
 	setTimer,HK_extract_filenames_cycle_sleep,-4500
-	
+
 	HK_extract_filenames_cycle:=1
 	hotkey,^q,on	;	cancelling hot key is made vigilant
-	setTimer,HK_extract_filenames_cycle,70	
+	setTimer,HK_extract_filenames_cycle,70
 	sleep,10
 return
 
@@ -980,14 +981,14 @@ HK_extract_filenames_cycle:	;	cancel checking status of ctrl key
 	GetKeyState,state,CTRL
 	If state=u
 	{
-		settimer,removetooltip,-800		
+		settimer,removetooltip,-800
 		if ( HK_extract_filenames_cycle_count=0 )
 		{
 
 		}
 		else if ( HK_extract_filenames_cycle_count=1 )
 		{
-		
+
 			clipboard:=matchlist
 		}
 		else
@@ -1002,8 +1003,8 @@ HK_extract_filenames_cycle_sleep:	;	cancel after a delay even if ctrl is pressed
 
 	if (HK_extract_filenames_cycle)
 		tooltip,cancelling
-	gosub,cancelHK_extract_filenames_cycle				
-	settimer,removetooltip,-100			
+	gosub,cancelHK_extract_filenames_cycle
+	settimer,removetooltip,-100
 return
 
 cancelHK_extract_filenames_cycle:	;	cancel without action
@@ -1011,19 +1012,19 @@ cancelHK_extract_filenames_cycle:	;	cancel without action
 	HK_extract_filenames_cycle:=0
 	HK_extract_filenames_cycle_count:=0
 	hotkey,^q,off
-	settimer,removetooltip,-100			
+	settimer,removetooltip,-100
 return
 
 
 sel_file_in_Npp:
 	file=%selText%
-	file:=regexreplace(file,"(^\s+)|(\s+$)|""","")	
+	file:=regexreplace(file,"(^\s+)|(\s+$)|""","")
 	menuEvent_function("N++",file)
 return
 
 clipB_file_in_Npp:
 	file:=contents
-	stringreplace,file,file,",all	
+	stringreplace,file,file,",all
 	file:=regexreplace(file,"(^\s+)|(\s+$)","") ; "
 	menuEvent_function("N++",file)
 
@@ -1045,27 +1046,27 @@ return
 		{
 			msg=open sel text in N++
 			HK_sel_Text_cycle_action=sel_in_Npp
-		}	
+		}
 		else if (HK_sel_Text_cycle_count=2)
 		{
 			msg=open in quicknote
 			HK_sel_Text_cycle_action=sel_in_Notepad
-		}		
+		}
 		else
 		{
 			HK_sel_Text_cycle_count:=0
 			msg = cancel
 			HK_sel_Text_cycle_action=nil
 			settimer,cancelHK_sel_Text_cycle,-300
-		}			
+		}
 	}
 
 	tooltip,%msg%
 	settimer,removetooltip,-3500
 	setTimer,HK_sel_Text_cycle_sleep,-3500
-	
+
 	hotkey,^q,on	;	cancelling hot key is made vigilant
-	setTimer,HK_sel_Text_cycle,70	
+	setTimer,HK_sel_Text_cycle,70
 
 return
 
@@ -1075,7 +1076,7 @@ HK_sel_Text_cycle:	;	cancel checking status of ctrl key
 	{
 		gosub,cancelHK_sel_Text_cycle
 		tooltip,executing %msg%
-		settimer,removetooltip,-600		
+		settimer,removetooltip,-600
 		sleep,350
 		gosub,%HK_sel_Text_cycle_action%
 	}
@@ -1085,8 +1086,8 @@ HK_sel_Text_cycle_sleep:	;	cancel after a delay even if ctrl is down
 
 		if (HK_sel_Text_cycle)
 			tooltip,cancelling
-		gosub,cancelHK_sel_Text_cycle		
-		
+		gosub,cancelHK_sel_Text_cycle
+
 		settimer,removetooltip,-100
 return
 
@@ -1098,15 +1099,15 @@ cancelHK_sel_Text_cycle:	;	cancel without action
 return
 
 $^q::	; na
-	if  (HK_extract_filenames_cycle) 
+	if  (HK_extract_filenames_cycle)
 	{
 		gosub,cancelHK_extract_filenames_cycle
 	}
-	else if  (HK_sel_Text_cycle) 
+	else if  (HK_sel_Text_cycle)
 	{
 		gosub,cancelHK_sel_Text_cycle
 	}
-	else if (PrintScreenCycleHK_active)		
+	else if (PrintScreenCycleHK_active)
 	{
 		gosub,cancelPrintScreenCycleHK
 	}
@@ -1176,14 +1177,14 @@ return
 	clipsave=
 return
 
-	
+
 ^+4:: ; google feeeling lucky
-	
+
 	selText:=Get_Selected_Text()
-	url := "http://www.google.com/search?btnI=I%27m+Feeling+Lucky&ie=UTF-8&oe=UTF-8&q=" . selText . "%20lyrics" 
+	url := "http://www.google.com/search?btnI=I%27m+Feeling+Lucky&ie=UTF-8&oe=UTF-8&q=" . selText . "%20lyrics"
 
 	run,%url%
-	
+
 	return
 
 
@@ -1204,8 +1205,8 @@ return
 ; HalfWindows.ahk - Troy Chard - version 1.1 - April 13, 2009
 ; https://autohotkey.com/board/topic/39698-half-windows-script/
 ; AutoHotkey Script
-; Description: Ctrl+Arrow moves window to that half of the screen. 
-; eg: Ctrl+LeftArrow moves window to left half screen.  Ctrl+TopArrow to 
+; Description: Ctrl+Arrow moves window to that half of the screen.
+; eg: Ctrl+LeftArrow moves window to left half screen.  Ctrl+TopArrow to
 ; the top half of screen.  etc.
 ; It's best to compute work area every time as user may alter
 ; task bar position or screen-res.
@@ -1216,7 +1217,7 @@ LeftHalfWindow()
 	w:=((areaRight-areaLeft)/2)
 	h:=(areaBottom-areaTop)
 
-	WinRestore, A	
+	WinRestore, A
 	WinMove, A, , 0, 0,%w%,%h%
 }
 
@@ -1259,4 +1260,3 @@ BottomHalfWindow()
 
 ; ^Up::   TopHalfWindow()
 ; ^Down:: BottomHalfWindow()
-

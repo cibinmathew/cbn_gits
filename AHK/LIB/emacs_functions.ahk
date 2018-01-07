@@ -2,21 +2,21 @@
 ; 1. achieve functionality
 	; * translate to normal
 	; * pass through
-; 2. pass thru	
+; 2. pass thru
 pass_through_keys(HK)
 	{
 	If (is_in_an_emacs_window())
 	{
-	
+
 		; send_key(HK)
-		
+
 	}
 	else
 	{
 		; HK := translate_emacsCombo_to_Normal_combo_and_send(HK)
 	}
 		send_key(HK)
-	
+
 	; msgbox,%HK%
 }
 
@@ -25,15 +25,15 @@ send_key_emacs_or_after_translatingTo_normal_ifNot_emacseditor(HK)
 ; input is normal keycombo like c-v for paste
 	If (is_in_an_emacs_window())
 	{
-	
+
 		send_key(HK)
-		
+
 	}
 	else
 	{
 		HK := translate_emacsCombo_to_Normal_combo_and_send(HK)
 	}
-	
+
 	; msgbox,%HK%
 }
 
@@ -43,7 +43,7 @@ encode_key_combo(HK)
 {
 	if regexmatch(HK,"^space & .*")
 	{
-	
+
 		StringtrimLeft, HK, HK, 8
 		If GetKeyState("shift")
 		{
@@ -54,7 +54,7 @@ encode_key_combo(HK)
 		}
 		else If GetKeyState("alt")
 		{
-			HK = Spc-Alt-%HK% 
+			HK = Spc-Alt-%HK%
 		}
 		else
 			HK = Spc-%HK%
@@ -77,7 +77,7 @@ encode_key_combo(HK)
 	StringReplace,HK,HK,.,Dot
 	StringReplace,HK,HK,`,,Comma
 	StringReplace,HK,HK,/,Forward_slash
-	
+
 	StringReplace,HK,HK,`;,semi_colon
 	StringReplace,HK,HK,',Single_quote
 	StringReplace,HK,HK,--,-minus
@@ -90,7 +90,7 @@ decode_key_combo(HK)
 	StringReplace,HK,HK,Dot,.
 	StringReplace,HK,HK,Comma,`,
 	StringReplace,HK,HK,Forward_slash,/
-	
+
 	StringReplace,HK,HK,semi_colon,`;
 	StringReplace,HK,HK,Single_quote,'
 	StringReplace,HK,HK,minus,-
@@ -107,7 +107,7 @@ send_key(HK)
 		stringtrimleft,key,HK,4
 		key={%key%}
 		modifier=^+
-	}		
+	}
 	else if regexmatch(HK,"^C-S-.")
 	{
 		stringtrimleft,key,HK,4
@@ -144,14 +144,14 @@ send_key(HK)
 	{
 		key := HK
 		modifier=
-	}	
-	
+	}
+
 	; msgbox,m %modifier% k%key%
 	; msgbox,%modifier%%key%
 	send,%modifier%%key%
 	return
 }
- 
+
 
 translate_emacsCombo_to_Normal_combo_and_send(HK)
 {
@@ -165,7 +165,7 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 	emacs_mapping_C_7=C-7
 	emacs_mapping_C_8=C-8
 	emacs_mapping_C_9=C-9
-	
+
 	emacs_mapping_C_f1=C-f1
 	emacs_mapping_C_f2=C-f2
 	emacs_mapping_C_f3=C-f3
@@ -178,7 +178,7 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 	emacs_mapping_C_f10=C-f10
 	emacs_mapping_C_f11=C-f11
 	emacs_mapping_C_f12=C-f12
-	
+
 	emacs_mapping_C_a={Home}
 	emacs_mapping_C_b={Left}
 	emacs_mapping_C_c=C-c
@@ -222,7 +222,7 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 	emacs_mapping_A_Dot=key_combo_A_Dot
 	emacs_mapping_A_Comma=key_combo_A_Comma
 	emacs_mapping_A_Backspace=key_combo_A_Backspace
-	
+
 	key_combos_map_to_function=C-x,C-s,C-g,C-d,C-e,A-Backspace,A-f,A-Comma,A-Dot,A-d,A-b,C-Forward_slash
 	if HK in %key_combos_map_to_function%
 		maps_to_function := 1
@@ -232,19 +232,19 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 		; msgbox,a%HK%
 	StringReplace, HK, HK,-,_, All
 	; msgbox,%HK% %maps_to_function%
-	
-	
+
+
 	if (maps_to_function)
 	{
 	; msgbox
 		gosub, key_combo_%HK%
 	}
 	else
-	{ 
+	{
 	; msgbox,%HK%
 		stringleft,key,HK,4
 	; msgbox,%key%
-	
+
 		if ((key<>"C_S_") and (key<>"C_A_"))
 			HK:= emacs_mapping_%HK%
 		else
@@ -254,7 +254,7 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 			StringReplace, HK, HK,C_A_,C-A-, All
 		}
 			; stringtrimleft,HK,HK,4
-		
+
 	; msgbox,%HK%
 		send_key(HK)
 	}
@@ -264,7 +264,8 @@ translate_emacsCombo_to_Normal_combo_and_send(HK)
 
 is_in_an_emacs_window()
 {
-	If  WinActive("ahk_exe emacs.exe") ; or WinActive("ahk_exe javaw.exe")  Or WinActive("ahk_exe eclipse.exe") Or WinActive("ahk_exe sublime_text.exe")  Or WinActive("ahk_exe firefox.exe") 
+	If  WinActive("ahk_exe emacs.exe") or WinActive("ahk_exe VirtualBox.exe")
+     or WinActive("ahk_exe javaw.exe")  Or WinActive("ahk_exe eclipse.exe") Or WinActive("ahk_exe sublime_text.exe")  Or WinActive("ahk_exe firefox.exe")
 		return true
 	else
 		return false

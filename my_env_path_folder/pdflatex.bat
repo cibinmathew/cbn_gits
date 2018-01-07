@@ -1,1 +1,0 @@
-C:\texlive\2016\bin\win32\pdftex.exe %1
