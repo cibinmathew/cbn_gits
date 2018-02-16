@@ -298,6 +298,7 @@ fav_hard_compact:
 return
 
 ^+v::	; na
+msgbox
 	if (strip_text_cycle_active)
 	{
 		smart_strip_text("right",1)

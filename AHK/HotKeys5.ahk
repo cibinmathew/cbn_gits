@@ -20,8 +20,8 @@ mail_cycle,mail_cycle,mail_cycle
 ,
 ,
 )
-
-HK_cycle_register("<!l","login_HK",4,4000,"LAlt", "$!q",config) 
+; TODO disabled for emacs(renable later)
+; HK_cycle_register("<!l","login_HK",4,4000,"LAlt", "$!q",config) 
 
 return
 ;		LESS FREQUENT HOT KEYS

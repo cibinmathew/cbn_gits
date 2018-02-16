@@ -586,7 +586,8 @@ cancelExtract_col_HK:	 ; cancel without action
 
 return
 
-$<^e::	; split
+; TODO disabled for emacs(renable later)
+;$<^e::	; split
 
 if trigger_if_triggered_by_emacs_script_else_proceed("LCtrl")
 		return
