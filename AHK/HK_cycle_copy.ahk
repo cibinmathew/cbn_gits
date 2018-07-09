@@ -9,8 +9,8 @@ config=
 copy as base64,paste here from clipb
 copy_file_as_base64,paste_base64_asFile
 ,,,
- 
-2  
+
+2
 Lwin
 7000
 
@@ -28,12 +28,12 @@ cycle("<#=",config)
 		; globals HK_custom_disp_msg, HK_cycled_output, HK_cycle_id_count
 
 		; %HK_cycle_id%_release_Pre_action get executed for all
-		; correspondingly nth action gets executed for HK_actions_onRelease 
+		; correspondingly nth action gets executed for HK_actions_onRelease
 
-		
+
 		; global functions= HK_cycle_initialise
 
-		
+
 HK_cycle_list = OpenFavFolder_HK,copy_paste_base64_HK
 loop,parse,HK_cycle_list,`,
 	%a_loopfield% := 0
@@ -105,22 +105,22 @@ return
 		HK_actions_onRelease=copy_file_as_base64,paste_base64_asFile
 		HK_actions_before_msg= ;
 		extra_params= ,,,
-		input_param= 
-		HK_cycle_tot_steps= 2  
+		input_param=
+		HK_cycle_tot_steps= 2
 		release_checking_key ="Lwin"
 		idle_stop_after = 7000
 		%HK_cycle_id%_release_Pre_action=
-*/		
+*/
 
 
 
 copy_file_as_base64: ; copy as base64
 	FileFullpathname := get_selected_filepath()
 	copy_file_as_base64(FileFullpathname)
-Return     
-          
+Return
+
 paste_base64_asFile:	; paste base64 data here
-	sourcepath := get_parent_filepath()	
+	sourcepath := get_parent_filepath()
 	paste_base64_asFile(sourcepath)
 Return
 
@@ -135,8 +135,8 @@ copy_file_as_base64(FileFullpathname)
 		settimer,removetooltip,1500
 		tooltip,length=%len%`n%a%
 	}
-	
-	
+
+
 paste_base64_asFile(sourcepath)
 	{
 		; clipboard content first line is fullpathname of copied file
@@ -148,7 +148,7 @@ paste_base64_asFile(sourcepath)
 				File := a_loopfield
 			else
 				DATA .= a_loopfield
-			
+
 		}
 		splitpath,File,Filename
 		target_file := sourcepath . "\" . Filename
@@ -158,11 +158,10 @@ paste_base64_asFile(sourcepath)
 			settimer,removetooltip,1500
 			tooltip,error
 			return
-		}	
+		}
 		Bytes := Base64Dec( BIN, DATA )
 		VarZ_Save( BIN, Bytes, target_file )
 		VarSetcapacity( DATA, 0 )
 		settimer,removetooltip,1500
 		tooltip,%target_file%
 	}
-	
